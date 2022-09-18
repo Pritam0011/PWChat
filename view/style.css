@@ -12,6 +12,17 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+
+/* animate */
+#preloader {
+  background: #000 url(/ani.gif) no-repeat center;
+  background-size: 25%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
 nav {
   opacity: 0.95;
 }

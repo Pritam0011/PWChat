@@ -32,8 +32,9 @@ socket.on("left", (data) => {
 subBtn.addEventListener("click", (e) => {
   e.preventDefault();
   let tv = textarea.value;
-
-  sendMessage(tv);
+  if (tv != "") {
+    sendMessage(tv);
+  }
 });
 
 function sendMessage(mess) {
