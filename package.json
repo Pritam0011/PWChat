@@ -1,0 +1,15 @@
+{
+  "name": "pwchat",
+  "version": "1.0.0",
+  "description": "PWChat",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Pritam Samanta",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "socket.io": "^4.5.2"
+  }
+}

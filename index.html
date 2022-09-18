@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PWChat</title>
+    <link rel="shortcut icon" href="/chat1.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar bg-dark nbbd">
+      <div class="ncf">
+        <a class="navbar-brand" href="#">
+          <img
+            src="/chat1.png"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+            style="padding-left: 5px"
+          />
+          &nbsp;<b style="color: yellow">PWChat</b>
+        </a>
+      </div>
+    </nav>
+    <section class="chatbox">
+      <div class="container" id="con">
+        <div class="join-chat">
+          <div><b>Welcome to PWChat by Pritam Web...</b></div>
+        </div>
+      </div>
+      <div class="send">
+        <form action="#" id="send-container">
+          <input
+            type="text"
+            name="messageInp"
+            id="messageInp"
+            autocomplete="off"
+            placeholder="Enter Your text here..."
+            autofocus
+          />
+          <button class="btn btn-outline-warning bow" type="submit">
+            <b>SEND</b>
+          </button>
+        </form>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/chat.js"></script>
+  </body>
+</html>
