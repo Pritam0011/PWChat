@@ -5,6 +5,8 @@ let textarea = document.querySelector("#messageInp");
 let msga = document.querySelector(".container");
 let subBtn = document.querySelector(".bow");
 var audio = new Audio("/ring.mp3");
+var audio2 = new Audio("/join.mp3");
+var audio3 = new Audio("/left2.wav");
 
 const scrollTB = () => {
   msga.scrollTop = msga.scrollHeight;
@@ -23,9 +25,11 @@ const appendNew = (message) => {
   msga.append(messageEle);
 };
 socket.on("user-joined", (data) => {
+  audio2.play();
   appendNew(`${data} joined the chat...`);
 });
 socket.on("left", (data) => {
+  audio3.play();
   appendNew(`${data} left the chat...`);
 });
 
