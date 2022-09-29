@@ -1,6 +1,7 @@
 const express = require("express");
 const { Socket } = require("socket.io");
 const app = express();
+/* Creating a server using the express app. */
 const http = require("http").createServer(app);
 
 /* Setting the port to 4000 if the environment variable PORT is not set. */
