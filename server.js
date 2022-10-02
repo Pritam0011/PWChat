@@ -8,14 +8,14 @@ const http = require("http").createServer(app);
 const port = process.env.PORT || 4000;
 
 http.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`);
+	console.log(`Listening at http://localhost:${port}`);
 });
 
 /* Telling express to use the view folder as the static folder. */
 app.use(express.static(__dirname + "/view"));
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+	res.sendFile(__dirname + "/index.html");
 });
 
 //socket.io
@@ -25,21 +25,22 @@ const users = {};
 const io = require("socket.io")(http);
 
 io.on("connection", (socket) => {
-  console.log("Connected Successfully...");
+	console.log("Connected Successfully...");
 
-  socket.on("new-user-joined", (cname) => {
-    console.log("New User ", cname);
-    users[socket.id] = cname;
-    socket.broadcast.emit("user-joined", cname);
-  });
+	socket.on("new-user-joined", (nuj) => {
+		console.log("New User ", nuj.cn);
+		console.log(nuj.did);
+		users[socket.id] = nuj.cn;
+		socket.broadcast.emit("user-joined", nuj.cn);
+	});
 
-  socket.on("disconnect", (message) => {
-    console.log(users[socket.id], " left");
-    socket.broadcast.emit("left", users[socket.id]);
-    delete users[socket.id];
-  });
+	socket.on("disconnect", (message) => {
+		console.log(users[socket.id], " left");
+		socket.broadcast.emit("left", users[socket.id]);
+		delete users[socket.id];
+	});
 
-  socket.on("message", (msg) => {
-    socket.broadcast.emit("message", msg);
-  });
+	socket.on("message", (msg) => {
+		socket.broadcast.emit("message", msg);
+	});
 });
